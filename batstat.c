@@ -18,5 +18,5 @@ for(int i=0; i<longth; i++){
 m = p/temp; 
 
 
-static double  ecart () {
+static double  ecart () {}
 
