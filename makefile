@@ -11,7 +11,7 @@ $(EXEC) : main.o batstat.o
 	$(CC) $(CFLAGS) -lm -o $@ main.o batstat.o
 
 
-main.o : main.c
+main.o : main.c batstat.h
 	 $(CC) $(CFLAGS) -o $@ -c $< 
 
 batstat.o : batstat.c batstat.h

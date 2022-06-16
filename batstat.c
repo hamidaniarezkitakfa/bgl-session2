@@ -3,4 +3,12 @@
 #include <math.h>
 #include <stdio.h>
 
+//fonction moyen
+
+static double  moy () {
+
+
+
+
+static double  ecart () {
 
