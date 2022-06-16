@@ -5,7 +5,7 @@ MOCKA = -lcmocka
 ISO = -std=c99
 EXEC = batstat
 
-all: $(EXEC)
+all: $(EXEC) check
 
 $(EXEC) : main.o batstat.o 
 	$(CC) $(CFLAGS) -lm -o $@ main.o batstat.o
@@ -16,6 +16,16 @@ main.o : main.c
 
 batstat.o : batstat.c 
 	 $(CC) $(CFLAGS) -o $@ -c $<
+
+test_batstat.o : test_batstat.c 
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+test_batstat : test_batstat.o 
+	$(CC) $(ISO) $(LDFLAGS) -g -o $@ $< $(MOCKA)
+
+check : test_batstat
+	@ echo "Execution Test : "
+	./test_batstat
 
 
 clean : 
