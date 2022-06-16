@@ -14,7 +14,7 @@ $(EXEC) : main.o batstat.o
 main.o : main.c
 	 $(CC) $(CFLAGS) -o $@ -c $< 
 
-batstat.o : batstat.c 
+batstat.o : batstat.c batstat.h
 	 $(CC) $(CFLAGS) -o $@ -c $<
 
 test_batstat.o : test_batstat.c 
